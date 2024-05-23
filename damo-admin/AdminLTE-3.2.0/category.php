@@ -19,7 +19,7 @@ include ("sidebar.php");
     </div>
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
+        <div class="container">
             <!-- Small boxes (Stat box) -->
             <div class="row">
 
@@ -67,7 +67,7 @@ include ("sidebar.php");
                             <th scope="col">Edit</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center">
+                    <tbody  class="text-center">
                         <?php
                         $conn = mysqli_connect("localhost", "root", "", "admin_project");
                         $sql = "SELECT * FROM `category`";
@@ -81,7 +81,7 @@ include ("sidebar.php");
                                     <th scope="row"><?php echo $i; ?></th>
                                     <td><?php echo $row["cat_name"]; ?></td>
                                     <td><?php echo $row["cat_sub_name"]; ?></td>
-                                    <td><img src="<?php echo 'upload/' . $row["cat_image"]; ?>" width="150px" alt=""></td>
+                                    <td><img src="<?php echo 'all-image/upload/' . $row["cat_image"]; ?>" width="150px" alt=""></td>
                                     <td><?php echo $row["cat_desc"]; ?></td>
                                     <td class="d-flex justify-content-center">
                                         <a href="<?php echo "cat_edit.php?id=$row[id]" ?>" class="btn btn-primary"
