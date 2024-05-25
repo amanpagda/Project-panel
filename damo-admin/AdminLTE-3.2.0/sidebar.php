@@ -61,7 +61,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="product.php" class="nav-link">
                 <i class="nav-icon fa-solid fa-cart-plus"></i>
                 <p>
                   Product's

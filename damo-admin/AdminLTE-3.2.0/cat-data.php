@@ -383,7 +383,18 @@ if (isset($_POST["sub_delete"]))
 
 
 // PRODUCT START ************************
+// $conn = mysqli_connect("localhost","root","","admin_project");
+// $category = $_POST['pro-category'];
 
+// $sql = "select ps_name from pro-sub-cate where ps_code'".$category."'";
+// $result = mysqli_query($conn, $sql);
+
+// $str = '<option class="fw-bold">--Select Sub Category--</option>';
+
+// while($row = mysqli_fetch_array($result)){
+//     $str .= '<option class="fw-bold">'.$row['ps_name'].'</option>';
+// }
+// echo $str;
 // PRODUCT END ************************
 
 ?>
