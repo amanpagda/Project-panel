@@ -135,7 +135,7 @@ include ("sidebar.php");
                         <a href="<?php echo "update.php?id=$row[id]" ?>" class='btn btn-primary' style="margin-right:5px;">
                           <i class="fa-regular fa-pen-to-square"></i>
                         </a>
-                        <form action="index.php" method="POST">
+                        <form action="index1.php" method="POST">
                           <input type="hidden" name="del_id" value="<?php echo "$row[id]"; ?>">
                           <button type="submit" name="delete" class="btn btn-danger">
                             <i class="fa-solid fa-trash"></i>

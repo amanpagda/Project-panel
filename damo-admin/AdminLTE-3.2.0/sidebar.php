@@ -75,14 +75,14 @@
           <?php
         }
         ?>
-        
+
 
         <?php
         $role = $_SESSION["role"];
         if ($role == "Super-Admin") {
           ?>
           <li class="nav-item menu-open">
-            <a href="./index.php" class="nav-link active">
+            <a href="./index1.php" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -113,68 +113,73 @@
               </p>
             </a>
           </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa-solid fa-screwdriver-wrench"></i>
-            <p>
-              SEO Tools
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-table"></i>
-            <p>
-              Social Links
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa-solid fa-sliders"></i>
-            <p>
-              Slider
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa-solid fa-gear"></i>
-            <p>
-              Page Settings
-              <i class="fas fa-angle-left right"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Logo</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Contact</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa-solid fa-otter"></i>
-            <p>
-              others
-            </p>
-          </a>
-        </li>
-        
-        <?php
+          <li class="nav-item">
+            <a href="seo.php" class="nav-link">
+              <i class="nav-icon fa-solid fa-screwdriver-wrench"></i>
+              <p>
+                SEO Tools
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Social Links
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa-solid fa-sliders"></i>
+              <p>
+                Slider
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa-solid fa-gear"></i>
+              <p>
+                Page Settings
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Logo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa-solid fa-otter"></i>
+              <p>
+                others
+              </p>
+            </a>
+          </li>
+
+          <?php
         }
         ?>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="logout.php" class="btn btn-danger text-white fw-bold nav-link">Logout</a>
-        </li>
+      <li class="nav-item mt-3">
+        <a href="logout.php" class="nav-link btn">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <p>
+            Logout
+          </p>
+        </a>
+      </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
