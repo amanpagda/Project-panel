@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ("cat-data.php");
 include ("connection.php");
 include ("header.php");
@@ -56,7 +57,7 @@ include ("sidebar.php");
                                     <label class="form-label">Category Image</label>
                                     <input type="file" class="form-control" name="cat_image" accept=".jpg, .png, .jpeg">
                                     <input type="hidden" class="form-control" value="<?php echo $row["cat_image"];?>" name="cat_image_old" accept=".jpg, .png, .jpeg">
-                                    <img class="mt-3" src="<?php echo "upload/".$row["cat_image"];?>" width="150px" alt="">
+                                    <img class="mt-3" src="<?php echo "all-image/upload/".$row["cat_image"];?>" width="150px" alt="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="floatingTextarea">Comments</label>

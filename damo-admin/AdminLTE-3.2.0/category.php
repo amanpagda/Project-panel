@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ("cat-data.php");
 include ("connection.php");
 include ("header.php");

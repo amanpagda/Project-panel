@@ -464,8 +464,95 @@ if (isset($_POST["pro-add"])) {
 }
 // product insert end
 
-// product update start
 
+// product update start
+if (isset($_POST["pro-update"])) {
+    $id = $_POST["id"];
+    $name = $_POST["pro-name"];
+    $category = $_POST["pro-category"];
+    $pro_sub_cate = $_POST["pro-sub-cate"];
+    $desc = $_POST["pro-desc"];
+
+    $random = rand(1, 99999);
+    $image = $_FILES["pro-image"]["name"];
+    $old_image = $_POST["pro-image-old"];
+
+    if ($image !== '') {
+        $update_file = $image;
+        unlink("all-image/product-upload/" . $old_image);
+        unlink("all-image/pro-no-watermark/" . $old_image);
+        if (file_exists("all-image/product-upload/" . $image)) {
+
+            header("location: product.php?already_exists_file");
+
+        }
+    } else {
+        $update_file = $old_image;
+    }
+
+    $sql = "UPDATE `products` SET `pro-name`='$name',`pro-category`='$category',`pro-sub-cate`='$pro_sub_cate',`pro-image`='$update_file',`pro-desc`='$desc',`date`=current_timestamp() WHERE `id`='$id'";
+    $result = mysqli_query($conn, $sql);
+
+    if (!empty($_FILES["pro-image"]["name"])) {
+        $image_name = basename($image);
+        $file_name = $image_name;
+        $targetFilePath = $targetdir . $file_name;
+        $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+
+        $newFolder = "all-image/pro-no-watermark/";
+        $newtargetFilePath = $newFolder . $file_name;
+
+        $allow_type = array('jpg', 'png', 'jpeg');
+
+        if (in_array($fileType, $allow_type)) {
+
+            if (move_uploaded_file($_FILES["pro-image"]["tmp_name"], $newtargetFilePath)) {
+                $watermark_img = imagecreatefrompng($watermark_path);
+                switch ($fileType) {
+                    case 'jpg':
+                        $im = imagecreatefromjpeg($newtargetFilePath);
+                        break;
+                    case 'jpeg':
+                        $im = imagecreatefromjpeg($newtargetFilePath);
+                        break;
+                    case 'png':
+                        $im = imagecreatefrompng($newtargetFilePath);
+                        break;
+                    default:
+                        $im = imagecreatefromjpeg($newtargetFilePath);
+                }
+
+                $main_width = imagesx($im);
+                $main_height = imagesy($im);
+                $watermark_width = imagesx($watermark_img);
+                $watermark_height = imagesy($watermark_img);
+
+                $x = ($main_width - $watermark_width) / 2;
+                $y = ($main_height - $watermark_height) / 2;
+
+                imagecopy($im, $watermark_img, $x, $y, 0, 0, $watermark_width, $watermark_height);
+
+
+                imagepng($im, $targetFilePath);
+                imagedestroy($im);
+
+                if (file_exists($targetFilePath)) {
+                            header('location: product.php');
+                } else {
+                    $statusMsg = '<p style="color:#EA4335;">Errom watermark</p>';
+                }
+            } else {
+                $statusMsg = '<p style="color:#EA4335;">Errom upload your watermark</p>';
+            }
+        } else {
+            $statusMsg = '<p style="color:#EA4335;">Sorry only jpg, png, & jpeg file uploaded</p>';
+        }
+
+
+    } else {
+        $statusMsg = '<p style="color:#EA4335;">Please select a file to upload</p>';
+    }
+}
 // product update end
 
 

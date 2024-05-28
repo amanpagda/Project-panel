@@ -14,9 +14,9 @@ if(isset($_POST["submit"])){
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        header('location: index.php?success=added');
+        header('location: index1.php?success=added');
     } else {
-        header('location: index.php?alert=add_error');
+        header('location: index1.php?alert=add_error');
     }
 
 }
@@ -35,9 +35,9 @@ if(isset($_POST["update"])){
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        header('location: index.php?success=Update');
+        header('location: index1.php?success=Update');
     } else {
-        header('location: index.php?alert=Update_error');
+        header('location: index1.php?alert=Update_error');
     }
 
 }
@@ -53,12 +53,12 @@ if(isset($_POST['delete'])){
     if($result){
         echo "<script>
         alert('Delete Successfully');
-        window.location.href = 'index.php';        
+        window.location.href = 'index1.php';        
         </script>";
     }else{
         echo "<script>
         alert('Delete Error....');
-        window.location.href = 'index.php';        
+        window.location.href = 'index1.php';        
         </script>";
     }
 
