@@ -122,15 +122,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Social Links
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="slider.php" class="nav-link">
               <i class="nav-icon fa-solid fa-sliders"></i>
               <p>
                 Slider
@@ -147,15 +139,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="logo.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Logo</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="contact.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Contact</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="social.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Social Links</p>
                 </a>
               </li>
             </ul>
